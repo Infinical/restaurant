@@ -4,6 +4,7 @@ Dir[File.join(File.dirname(__FILE__), 'models', '*.rb')].each { |file| require f
 require_relative 'helpers/data_mapper'
 require_relative 'helpers/warden'
 require 'pry'
+require 'data_mapper'
 
 
 
@@ -17,6 +18,8 @@ class SlowFood < Sinatra::Base
   set :session_secret, "supersecret"
 
   #binding.pry
+    #Create a test Restaurant
+    
   #Create a test User
   if User.count == 0
    @user = User.create(username: "admin")

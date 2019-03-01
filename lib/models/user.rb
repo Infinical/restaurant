@@ -1,4 +1,3 @@
-
 class User
   include DataMapper::Resource
 
@@ -6,6 +5,7 @@ class User
   property :username, String, length: 128
 
   property :password, BCryptHash
+  
 
   def authenticate(attempted_password)
     if self.password == attempted_password
@@ -14,6 +14,8 @@ class User
       false
     end
   end
+
+  belongs_to :restaurants
 end
 
 
